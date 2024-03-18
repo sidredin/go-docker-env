@@ -1,0 +1,16 @@
+version: "3.8"
+
+services:
+  app:
+    build:
+      context: .
+    image: golang-app
+    container_name: golang1.20
+    volumes:
+      - .:/app
+    networks:
+      - golang-net
+
+networks:
+  golang-net:
+    driver: bridge
